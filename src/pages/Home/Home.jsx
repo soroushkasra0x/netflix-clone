@@ -1,4 +1,3 @@
-import React from "react";
 import hero_banner from "../../assets/hero_banner.jpg";
 import hero_title from "../../assets/hero_title.png";
 import info_icon from "../../assets/info_icon.png";
@@ -29,8 +28,14 @@ const Home = () => {
               More Info
             </button>
           </div>
-          <TitleCards />
+          <TitleCards text="soroush tops" />
         </div>
+      </div>
+      <div className="more-cards">
+        <TitleCards title={"Blockbuster Movies"} />
+        <TitleCards title={"Only On Netflix"} />
+        <TitleCards title={"Upcoming"} />
+        <TitleCards title={"Top Pics For You"} />
       </div>
     </div>
   );

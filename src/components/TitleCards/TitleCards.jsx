@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import cards_data from "../../assets/cards/Cards_data";
 import "./TitleCards.css"; // Assuming you have a CSS file for styling
 
-const TitleCards = () => {
+const TitleCards = ({ title, catogory }) => {
   const cardsRef = useRef();
 
   const handleWheel = (event) => {
@@ -13,9 +13,10 @@ const TitleCards = () => {
   useEffect(() => {
     cardsRef.current.addEventListener("wheel", handleWheel);
   }, []);
+
   return (
     <div className="title-cards">
-      <h2>Popular On Netflix</h2>
+      <h2>{title ? title : "Popular On Netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
         {cards_data.map((card, index) => {
           return (
