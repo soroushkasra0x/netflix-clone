@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./TitleCards.css"; // Assuming you have a CSS file for styling
-
 const TitleCards = ({ title, catogory }) => {
   const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
-  // console.log(apiData);
 
   const options = {
     method: "GET",
@@ -39,13 +38,13 @@ const TitleCards = ({ title, catogory }) => {
       <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index) => {
           return (
-            <div className="card" key={index}>
+            <Link to={`/player/${card.id}`} className="card" key={index}>
               <img
                 src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path}
                 alt=""
               />
               <p>{card.original_title}</p>
-            </div>
+            </Link>
           );
         })}
       </div>
